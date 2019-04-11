@@ -3,6 +3,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from '../fireBaseConfig';
 import AppointScreen from './AppointmentPage';
+import { Redirect } from 'react-router-dom';
 
 
 class RegScreen extends Component{
@@ -45,24 +46,22 @@ class RegScreen extends Component{
     }
 
     render()
-    {
-        
-        let success = this.state.successlogin ? <AppointScreen /> : 
-        <form onSubmit={this.handleSubmit}>
-            E-Mail:<input name ="username" type="email" value={this.state.username} onChange = {this.handleChange} placeholder = "User Name" /> 
-            <br/>
-            Password:<input name="password" type="password" value={this.state.password} onChange = {this.handleChange} placeholder = "Password"/> 
-            <br/>
-            <input type="submit"/>
-            <br/>
-            <label>Forgot Password?</label>
-            <br/>
-            {this.state.usernotfound && <label style={{color:'red'}}>User Not Found</label>}        
-        </form> 
-        
+    {    
+        let nextPage = this.state.successlogin ? <Redirect to='/appointment'/> : 
+         <form onSubmit={this.handleSubmit}>
+                E-Mail:<input name ="username" type="email" value={this.state.username} onChange = {this.handleChange} placeholder = "User Name" /> 
+                <br/>
+                Password:<input name="password" type="password" value={this.state.password} onChange = {this.handleChange} placeholder = "Password"/> 
+                <br/>
+                <input type="submit"/>
+                <br/>
+                <label>Forgot Password?</label>
+                <br/>
+                {this.state.usernotfound && <label style={{color:'red'}}>User Not Found</label>}        
+            </form> 
         return(
-           <div>
-               {success}
+            <div>
+                {nextPage}
            </div>
         )
     }
