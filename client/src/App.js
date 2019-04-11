@@ -3,7 +3,7 @@ import './App.css';
 import RegScreen from './Pages/registrationScreen';
 import AppointScreen from './Pages/AppointmentPage';
 import { BrowserRouter, Route } from "react-router-dom";
-import firebase from './firebase';
+import SecondScreen from './Pages/secondScreen';
 
 
 class App extends React.Component {
@@ -126,29 +126,11 @@ class App extends React.Component {
   render() {
 
     return (
-      <div>
-        <BrowserRouter>
-          <Route path='/' component={RegScreen} exact />
-          <Route path='/appointment' component={AppointScreen} />
-        </BrowserRouter>
-        <h1>Users</h1>
-        {
-          this.state.users.map((user) => {
-            return (
-              <div>
-                <div>
-                  <div>
-                    <p> first name:   {user.first_name}</p>
-                    <p> last name: {user.last_name}</p>
-                    <p> email: {user.mail}</p>
-                    <p>Appintmrnt list: {user.appointment_list}</p>
-                  </div>
-                </div>
-              </div>
-            );
-          })
-        }
-      </div >
+      <BrowserRouter>
+        <Route path='/' component={RegScreen} exact />
+        <Route path='/appointment' component={AppointScreen} />
+        <Route path='/secondScreen' component={SecondScreen} />
+      </BrowserRouter>
     );
   }
 
