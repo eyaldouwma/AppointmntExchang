@@ -16,35 +16,43 @@ admin.initializeApp({
 var db = admin.database();
 var ref = db.ref("test/sub_test");
 
-ref.once("value", function (snapshot) {
+
+ref.on("value", function(snapshot) {
     console.log(snapshot.val());
-});
+    let alanis = snapshot.val();
+    let users = alanis.users;
+    let alan = users.alanisawesome;
+    console.log("alan was born on: " + alan.date_of_birth);
+})
+// ref.once("value", function (snapshot) {
+//     console.log(snapshot.val());
+// });
 
-var usersRef = ref.child("users");
-usersRef.set({
-    alanisawesome: {
-        date_of_birth: "June 23, 1912",
-        full_name: "Alan Turing"
-    },
-    gracehop: {
-        date_of_birth: "December 9, 1906",
-        full_name: "Grace Hopper"
-    }
-});
+// var usersRef = ref.child("users");
+// usersRef.set({
+//     alanisawesome: {
+//         date_of_birth: "June 23, 1912",
+//         full_name: "Alan Turing"
+//     },
+//     gracehop: {
+//         date_of_birth: "December 9, 1906",
+//         full_name: "Grace Hopper"
+//     }
+// });
 
-var hopperRef = usersRef.child("gracehop");
-hopperRef.update({
-    "nickname": "Amazing Grace"
-});
+// var hopperRef = usersRef.child("gracehop");
+// hopperRef.update({
+//     "nickname": "Amazing Grace"
+// });
 
 
-var postsRef = ref.child("posts");
+// var postsRef = ref.child("comments");
 
-var newPostRef = postsRef.push();
-newPostRef.set({
-  author: "gracehop",
-  title: "Announcing COBOL, a New Programming Language"
-});
+// var newPostRef = postsRef.push();
+// newPostRef.set({
+//   author: "jb",
+//   title: "Announcing C++, a New Programming Language"
+// });
 
 // dataRef.set("I'm writing data", function(error) {
 //     if (error) {
