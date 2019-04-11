@@ -48,19 +48,33 @@ class RegScreen extends Component{
     render()
     {    
         let nextPage = this.state.successlogin ? <Redirect to='/appointment'/> : 
-         <form onSubmit={this.handleSubmit}>
-                E-Mail:<input name ="username" type="email" value={this.state.username} onChange = {this.handleChange} placeholder = "User Name" /> 
-                <br/>
-                Password:<input name="password" type="password" value={this.state.password} onChange = {this.handleChange} placeholder = "Password"/> 
-                <br/>
-                <input type="submit"/>
-                <br/>
-                <label>Forgot Password?</label>
-                <br/>
-                {this.state.usernotfound && <label style={{color:'red'}}>User Not Found</label>}        
-            </form> 
+            <div className="wrapper">
+                <div className="container">
+                    <h1>Welcome</h1>
+                    <form className="form" onSubmit={this.handleSubmit}>
+                        <input name="username" type="email" value={this.state.username} onChange = {this.handleChange} placeholder = "E-Mail" /> 
+                        <input name="password" type="password" value={this.state.password} onChange = {this.handleChange} placeholder = "Password"/> 
+                        <button type="submit" id="login-button">Login</button>
+                    </form>
+                    <label>Forgot Password?</label>
+                    {this.state.usernotfound && <label style={{color:'red'}}>User Not Found</label>}        
+                </div>
+
+                <ul class="bg-bubbles">
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+		            <li></li>
+	            </ul>
+            </div>
         return(
-            <div className="container">
+            <div className="container1">
                 {nextPage}
            </div>
         )
