@@ -66,7 +66,7 @@ class App extends React.Component {
 
   }
 
-  async getUserFromDB() {
+  getUserFromDB() {
     const userRes = firebase.database().ref('users');
 
     userRes.on('value', (snapshot) => {
