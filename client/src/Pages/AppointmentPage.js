@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import Calendar from 'react-calendar';
+import DatePicker from 'react-datepicker';
+import addDays from 'date-fns/add_days';
+import subDays from 'date-fns/sub_days';
 
+import "react-datepicker/dist/react-datepicker-cssmodules.css";
 
 class AppointScreen extends Component {
 
@@ -8,13 +11,14 @@ class AppointScreen extends Component {
         super(props)
 
         this.state = {
-            date: ''
+            date: new Date()
         }
     }
 
     render() {
         return (
-            <Calendar />
+            <DatePicker selected={this.state.date} showMonthDropdown 
+                highlightDates={[new Date('2019,4,14'), addDays(new Date(), 7)]}/>
         )
     }
 

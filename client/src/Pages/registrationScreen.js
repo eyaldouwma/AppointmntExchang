@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from '../fireBaseConfig';
-import AppointScreen from './AppointmentPage';
 import { Redirect } from 'react-router-dom';
+import './reg.css';
 
 
 class RegScreen extends Component{
@@ -60,7 +60,7 @@ class RegScreen extends Component{
                 {this.state.usernotfound && <label style={{color:'red'}}>User Not Found</label>}        
             </form> 
         return(
-            <div>
+            <div className="container">
                 {nextPage}
            </div>
         )
