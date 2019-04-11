@@ -34,7 +34,7 @@ class AppointScreen extends Component {
 
     render() {
         let menu = 
-        <div>
+        <div className="menu">
             <ul className="list">
                 <li>15:00 <Button variant="contained" color="primary">Appoint</Button></li>
                 <li>16:20 <Button variant="contained" color="primary">Appoint</Button></li>
@@ -42,10 +42,12 @@ class AppointScreen extends Component {
         </div>
         const arr = [{"color":[new Date('2019,4,14'),new Date('2019,4,15'),new Date('2019,4,16')]}]
         return (
-            <div>
-                <DatePicker selected={this.state.date} onChange={this.handleChange} showMonthDropdown 
-                    highlightDates={arr} inline
-                    />
+            <div className="container">
+                <div className="calendar">
+                    <DatePicker selected={this.state.date} onChange={this.handleChange} showMonthDropdown 
+                        highlightDates={arr} inline
+                        />
+                </div>
                 {this.state.datePicked ? menu : null}           
             </div>
         )
