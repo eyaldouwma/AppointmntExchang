@@ -17,7 +17,7 @@ admin.initializeApp({
 
 // Get a database reference to our blog
 var db = admin.database();
-var ref = db.ref("appointmexchang");
+let refUsers = db.ref("appointmexchang/users");
 
 //var doctorsRef = ref.child("doctors");
 
