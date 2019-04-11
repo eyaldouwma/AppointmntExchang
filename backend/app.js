@@ -42,16 +42,16 @@ let refUsers = db.ref("appointmexchang/users");
 // //   });
 
 
-// // usersRef.set({
-// //     alanisawesome: {
-// //         date_of_birth: "June 23, 1912",
-// //         full_name: "Alan Turing"
-// //     },
-// //     gracehop: {
-// //         date_of_birth: "December 9, 1906",
-// //         full_name: "Grace Hopper"
-// //     }
-// // });
+usersRef.set({
+    alanisawesome: {
+        date_of_birth: "June 23, 1912",
+        full_name: "Alan Turing"
+    },
+    gracehop: {
+        date_of_birth: "December 9, 1906",
+        full_name: "Grace Hopper"
+    }
+});
 
 // // var hopperRef = usersRef.child("gracehop");
 // // hopperRef.update({

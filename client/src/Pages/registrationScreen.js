@@ -22,7 +22,7 @@ class RegScreen extends Component{
     }
 
     componentDidMount() {
-        firebase.initializeApp(firebaseConfig);
+      
         this.setState({firebaseState: firebase});
 
     }
