@@ -3,6 +3,7 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from '../fireBaseConfig';
 import AppointScreen from './AppointmentPage';
+import { Redirect } from 'react-router-dom';
 
 
 class RegScreen extends Component {

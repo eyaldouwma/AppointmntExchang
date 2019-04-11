@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import RegScreen from './Pages/registrationScreen'
+import RegScreen from './Pages/registrationScreen';
+import AppointScreen from './Pages/AppointmentPage';
+import { BrowserRouter, Route } from "react-router-dom";
 
 
 class App extends Component {
@@ -12,9 +14,10 @@ class App extends Component {
   
   render() {
     return (
-      <div className="App">
-        <RegScreen/>
-      </div>
+      <BrowserRouter>
+        <Route path='/' component={RegScreen} exact/>
+        <Route path='/appointment' component={AppointScreen}/>
+      </BrowserRouter>
     );
   }
 }
